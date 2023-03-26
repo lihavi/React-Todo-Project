@@ -192,5 +192,50 @@ body {
   .signup-button:hover {
     background-color: #d32f2f;
   }
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .hero{
+    height: 15vh;
+    width: 100%;
+    background-color:#357ae8;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
   
+  .logo{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  
+  nav ul li{
+    list-style-type: none;
+    display:inline-block;
+    padding: 10px 20px;
+  }
+  
+  .nav-item{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .nav-item:hover{
+    color:#fff;
+    transition: .3s;
+  }
+  
+
   

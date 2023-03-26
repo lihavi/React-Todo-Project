@@ -12,7 +12,6 @@ function App() {
     <Router>
       <div>
         <Navbar /> 
-        
         <div className="container">
           <div className="content">
             <Routes>
