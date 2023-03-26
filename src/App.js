@@ -1,9 +1,11 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginForm from "./LoginForm";
 import SignUp from "./SignUp";
 import Navbar from "./Navbar";
 import NewTodos from "./NewTodos";
 import Todos from "./Todos";
+import './App.css';
 
 function App() {
   return (
@@ -16,7 +18,7 @@ function App() {
             <Routes>
               <Route path='/todos' element={<Todos/>}/>
               <Route path='/new-todo' element={<NewTodos/>}/>
-              <Route path="/signup" element={<SignupForm />} />
+              <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<LoginForm />} />
             </Routes>
           </div>
