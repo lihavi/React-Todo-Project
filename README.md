@@ -17,3 +17,8 @@ To install and run the application locally:
 4. Run the command npm start to start the development server.
 5. Open your web browser and navigate to http://localhost:3000/ to view the application.
 
+# Author
+Vivian Njoroge
+
+# License
+MIT License
