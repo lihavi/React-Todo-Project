@@ -5,13 +5,13 @@ function NewTodos() {
   const [description, setDescription] = useState('');
   const [priority, setPriority] = useState('');
   const [todos, setTodos] = useState([]);
-  const [errorMessage, setErrorMessage] = useState('');
+  
 
   useEffect(() => {
-    fetch('/todos')
+    fetch('http://localhost:3000/todos')
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Failed to fetch todos');
+          throw new Error('Failed ');
         }
         return response.json();
       })
@@ -19,10 +19,7 @@ function NewTodos() {
         console.log('Todos fetched successfully', data);
         setTodos(data);
       })
-      .catch((error) => {
-        console.error(error);
-        setErrorMessage('Failed to fetch todos');
-      });
+      
   }, []);
 
   function handleSubmit(event) {
@@ -33,12 +30,7 @@ function NewTodos() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title, description, priority }),
     })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Failed to create todo');
-        }
-        return response.json();
-      })
+      
       .then((data) => {
         console.log('Todo created successfully', data);
         setTitle('');
@@ -46,10 +38,6 @@ function NewTodos() {
         setPriority('');
         setTodos([...todos, data]);
       })
-      .catch((error) => {
-        console.error(error);
-        setErrorMessage('Failed to create todo');
-      });
   }
 
   return (
@@ -79,7 +67,7 @@ function NewTodos() {
           <div className="form-group">
             <button type="submit" className="button">Create Todo</button>
           </div>
-          {errorMessage && <div className="error-message">{errorMessage}</div>}
+          
         </form>
       </div>
       <div className="list-container">

@@ -4,7 +4,7 @@ function Todos() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    fetch('/todos')
+    fetch('http://localhost:3000/todos')
       .then(response => response.json())
       .then(data => {
         const updatedTodos = data.map(todo => ({
@@ -19,7 +19,7 @@ function Todos() {
   }, []);
 
   const handleDelete = id => {
-    fetch(`/todos/${id}`, {
+    fetch(`http://localhost:3000/todos/${id}`, {
       method: 'DELETE',
     })
       .then(response => {
@@ -33,7 +33,7 @@ function Todos() {
   };
 
   const handleUpdate = (id, updatedTodo) => {
-    fetch(`/todos/${id}`, {
+    fetch(`http://localhost:3000/todos/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
